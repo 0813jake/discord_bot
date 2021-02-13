@@ -6,10 +6,9 @@ from urllib.request import urlopen, Request
 import urllib
 import bs4
 import youtube_dl
+import os
 
 
-
-token = ""
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 tm = time.localtime(1575142526.500323)
@@ -186,5 +185,6 @@ async def on_message(message):
         await message.channel.send(title+"를 재생합니다.")
 
 
-    
-client.run("ODAwMjQ4ODc4NzIwMjIxMjI0.YAPX2A.-bZSZ19C6r1u6YOXFNw9LMX6tcU")
+
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
