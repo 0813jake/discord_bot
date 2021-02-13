@@ -9,7 +9,7 @@ import youtube_dl
 
 
 
-token = "ODAwMjQ4ODc4NzIwMjIxMjI0.YAPX2A.g8sgerqnvCqVas1Wad0gLiCv_Sw"
+token = "ODAwMjQ4ODc4NzIwMjIxMjI0.YAPX2A.LV93H8t0WyMJnVjKi4urWE-fyIo"
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 tm = time.localtime(1575142526.500323)
