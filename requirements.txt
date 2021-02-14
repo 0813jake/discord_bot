@@ -2,7 +2,8 @@ discord.py==0.16.12
 asyncio
 random
 time
-urlopen, Request
+urlopen
+Request
 urllib
 bs4
 youtube_dl
