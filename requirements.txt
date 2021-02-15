@@ -1,6 +1,5 @@
 discord.py
 asyncio
 urlopen
-urllib
 bs4
 youtube_dl
