@@ -157,7 +157,7 @@ async def on_message(message):
             info = ydl.extract_info(url,download=False)
             title = info['title']
       
-        voice.play(discord.FFmpegPCMAudio(url.split('=')[1]+".mp3"))
+        voice.play(discord.FFmpegPCMAudio("file/"+url.split('=')[1]+".mp3"))
         await message.channel.send(title+"를 재생합니다.")
 
     if message.content.startswith("j!퇴장"):
