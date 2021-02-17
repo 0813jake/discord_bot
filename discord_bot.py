@@ -11,7 +11,6 @@ import os
 
 
 
-token = "ODAwMjQ4ODc4NzIwMjIxMjI0.YAPX2A.sAAAmOWr4GFEGdfIwvlmOn0bDnI"
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 tm = time.localtime(1575142526.500323)
