@@ -141,7 +141,7 @@ async def on_message(message):
 
     if message.content == "j!업데이트":
         embed = discord.Embed(
-            title="업데이트 기록", description="[2021년 2월 이전 업데이트 내역은 제외됩니다.] \n 2021-02-01 : 투표기능 추가 \n 2021-02-02 : 노래 기능 넣을려다가 안되서 안넣음(?) \n 2021-02-12 : j!마크시참 기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-12 : 음악기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-14 : 트위치 , 디스코드 안내 기능 삭제 \n 2021-02-14 : 마크시참 안내기능 삭제 \n 2021-02-15 : 24시간 기능 추가 \n 2021-02-15 : 24시간 기능 추가되면서 음악기능 사용 불가(왜인지는 모르겠지만 안됨) \n 2021-02-17 : DM도 가능하게 변경", color=0xD5D5D5)
+            title="업데이트 기록", description="[2021년 2월 이전 업데이트 내역은 제외됩니다.] \n 2021-02-01 : 투표기능 추가 \n 2021-02-02 : 노래 기능 넣을려다가 안되서 안넣음(?) \n 2021-02-12 : j!마크시참 기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-12 : 음악기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-14 : 트위치 , 디스코드 안내 기능 삭제 \n 2021-02-14 : 마크시참 안내기능 삭제 \n 2021-02-15 : 24시간 기능 추가 \n 2021-02-15 : 24시간 기능 추가되면서 음악기능 사용 불가(왜인지는 모르겠지만 안됨) \n 2021-02-17 : DM도 가능하게 변경 \n 2021-02-18 : 서버 입장 , 퇴장 시 메세지 발송기능 추가", color=0xD5D5D5)
         await message.channel.send(embed=embed)
 
     if message.content.startswith("j!재생"):
@@ -177,7 +177,15 @@ async def on_message(message):
         await voice.disconnect()
         await message.channel.send("음악 정지 및 음성채널에서 퇴장합니다.")
 
-
+white True:
+    await client.change_presence(status=discord.Status.online, activity=game)
+    time.sleep(3)
+    await client.change_presence(status=discord.Status.online, activity="버그 및 기타 문의는 0813jake#0638 로 해주세요.")
+    time.sleep(3)
+    await client.change_presence(status=discord.Status.online, activity="이 메세지는 3초마다 바뀝니다.")
+    time.sleep(3)
+    
+    
 
 access_token = os.environ['BOT_TOKEN']
 client.run(access_token)
