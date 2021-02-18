@@ -32,9 +32,6 @@ async def bt(games):
         for g in games:
             await client.change_presence(status = discord.Status.online, activity = game)
             time.sleep(3)
-            ch = 0
-            await client.change_presence(status = discord.Status.online, activity = discord.Game((ch += len(g.channels)) + "개의 서버에서 작동중입니다."))
-            time.sleep(3)
             await client.change_presence(status = discord.Status.online, activity = discord.Game('버그 및 기타 문의는 0813jake#0638 로 해주세요.'))
             time.sleep(3)
             await client.change_presence(status = discord.Status.online, activity = discord.Game('이 메세지는 3초마다 바뀝니다.'))
