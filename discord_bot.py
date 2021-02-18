@@ -27,9 +27,9 @@ async def on_ready():
     while True:
         await client.change_presence(status=discord.Status.online, activity=game)
         time.sleep(3)
-        await client.change_presence(status=discord.Status.online, activity="버그 및 기타 문의는 0813jake#0638 로 해주세요.")
+        await client.change_presence(status=discord.Status.online, activity=discord.Game('버그 및 기타 문의는 0813jake#0638 로 해주세요.'))
         time.sleep(3)
-        await client.change_presence(status=discord.Status.online, activity="이 메세지는 3초마다 바뀝니다.")
+        await client.change_presence(status=discord.Status.online, activity=discord.Game('이 메세지는 3초마다 바뀝니다.'))
         time.sleep(3)
 
 
