@@ -23,17 +23,20 @@ async def on_ready():
     print(client.user.name)
     print('성공적으로 봇이 시작되었습니다.')
     game = discord.Game('j!도움말')
+
+@client.event
+async def bt(games):
+    await client.wait_until_ready()
+
+    while not client.is_closed():
+        for g in games:
+            await client.change_presence(status = discord.Status.online, activity = game)
+            time.sleep(3)
+            await client.change_presence(status=discord.Status.online, activity = discord.Game('버그 및 기타 문의는 0813jake#0638 로 해주세요.'))
+            time.sleep(3)
+            await client.change_presence(status=discord.Status.online, activity = discord.Game('이 메세지는 3초마다 바뀝니다.'))
+            time.sleep(3)
     
-    while True:
-        await client.change_presence(status=discord.Status.online, activity=game)
-        time.sleep(3)
-        await client.change_presence(status=discord.Status.online, activity=discord.Game('버그 및 기타 문의는 0813jake#0638 로 해주세요.'))
-        time.sleep(3)
-        await client.change_presence(status=discord.Status.online, activity=discord.Game('이 메세지는 3초마다 바뀝니다.'))
-        time.sleep(3)
-
-
-
 @client.event
 async def on_member_join(self, member):
     msg = "<@{}>님 '제이크 디스코드 서버'에 오신걸 환영합니다!".format(str(member.id))
@@ -44,6 +47,14 @@ async def on_member_remove(self, member):
     msg = "<@{}>님이 서버에서 나가거나 추방되었습니다.".format(str(member.id))
     await find_first_channel(member.guild.text_channels).send(msg)
     return None
+
+async def bt(games):
+    await client.wait_until_ready()
+
+    while not client.is_closed():
+        for g in games:
+            await client.change_presence(status = discord.Status.online, activity = discord.Game(g))
+            await asyncio.sleep(5)
 
 async def on_message(message):
     if message.content == "j!도움말":
