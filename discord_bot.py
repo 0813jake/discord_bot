@@ -28,6 +28,16 @@ async def on_ready():
 
 
 @client.event
+async def on_member_join(self, member):
+    msg = "<@{}>님 '제이크 디스코드 서버'에 오신걸 환영합니다!".format(str(member.id))
+    await find_first_channel(member.guild.text_channels).send(msg)
+    return None
+
+async def on_member_remove(self, member):
+    msg = "<@{}>님이 서버에서 나가거나 추방되었습니다.".format(str(member.id))
+    await find_first_channel(member.guild.text_channels).send(msg)
+    return None
+
 async def on_message(message):
     if message.content == "j!도움말":
         embed = discord.Embed(
