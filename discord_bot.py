@@ -23,7 +23,14 @@ async def on_ready():
     print(client.user.name)
     print('성공적으로 봇이 시작되었습니다.')
     game = discord.Game('j!도움말')
-    await client.change_presence(status=discord.Status.online, activity=game)
+    
+    while True:
+        await client.change_presence(status=discord.Status.online, activity=game)
+        time.sleep(3)
+        await client.change_presence(status=discord.Status.online, activity="버그 및 기타 문의는 0813jake#0638 로 해주세요.")
+        time.sleep(3)
+        await client.change_presence(status=discord.Status.online, activity="이 메세지는 3초마다 바뀝니다.")
+        time.sleep(3)
 
 
 
@@ -176,14 +183,6 @@ async def on_message(message):
         
         await voice.disconnect()
         await message.channel.send("음악 정지 및 음성채널에서 퇴장합니다.")
-
-white True:
-    await client.change_presence(status=discord.Status.online, activity=game)
-    time.sleep(3)
-    await client.change_presence(status=discord.Status.online, activity="버그 및 기타 문의는 0813jake#0638 로 해주세요.")
-    time.sleep(3)
-    await client.change_presence(status=discord.Status.online, activity="이 메세지는 3초마다 바뀝니다.")
-    time.sleep(3)
     
     
 
