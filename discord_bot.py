@@ -27,6 +27,16 @@ async def on_ready():
 
     
 @client.event
+async def on_reaction_add(reaction, user):
+    if str(reaction.emoji) == "👍":
+        role = ""
+        rolename = message.content.split(" ")
+        member = discord.utils.get(cliient.get_all_members(), id=rolename[1])
+        for i in message.server.roles:
+            if i.name == rolename[6]
+                role = i
+                break
+
 async def on_message(message):
     if message.content == "j!도움말":
         embed = discord.Embed(
