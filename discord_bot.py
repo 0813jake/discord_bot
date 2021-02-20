@@ -38,14 +38,6 @@ async def on_member_remove(self, member):
     await find_first_channel(member.guild.text_channels).send(msg)
     return None
 
-async def bt(games):
-    await client.wait_until_ready()
-
-    while not client.is_closed():
-        for g in games:
-            await client.change_presence(status = discord.Status.online, activity = discord.Game(g))
-            await asyncio.sleep(5)
-
 async def on_message(message):
     if message.content == "j!도움말":
         embed = discord.Embed(
