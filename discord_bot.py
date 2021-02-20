@@ -27,16 +27,6 @@ async def on_ready():
 
     
 @client.event
-async def on_member_join(self, member):
-    msg = "<@{}>님 제이크 디스코드 서버에 오신걸 환영합니다!".format(str(member.id))
-    await find_first_channel(member.guild.text_channels).send(msg)
-    return None
-
-async def on_member_remove(self, member):
-    msg = "<@{}>님이 서버에서 나가거나 추방되었습니다.".format(str(member.id))
-    await find_first_channel(member.guild.text_channels).send(msg)
-    return None
-
 async def on_message(message):
     if message.content == "j!도움말":
         embed = discord.Embed(
@@ -140,7 +130,7 @@ async def on_message(message):
 
     if message.content == "j!업데이트":
         embed = discord.Embed(
-            title="업데이트 기록", description="[2021년 2월 이전 업데이트 내역은 제외됩니다.] \n 2021-02-01 : 투표기능 추가 \n 2021-02-02 : 노래 기능 넣을려다가 안되서 안넣음(?) \n 2021-02-12 : j!마크시참 기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-12 : 음악기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-14 : 트위치 , 디스코드 안내 기능 삭제 \n 2021-02-14 : 마크시참 안내기능 삭제 \n 2021-02-15 : 24시간 기능 추가 \n 2021-02-15 : 24시간 기능 추가되면서 음악기능 사용 불가(왜인지는 모르겠지만 안됨) \n 2021-02-17 : DM도 가능하게 변경 \n 2021-02-18 : 서버 입장 , 퇴장 시 메세지 발송기능 추가 \n 2021-02-18 : 상태메세지 자동변경 기능 추가", color=0xD5D5D5)
+            title="업데이트 기록", description="[2021년 2월 이전 업데이트 내역은 제외됩니다.] \n 2021-02-01 : 투표기능 추가 \n 2021-02-02 : 노래 기능 넣을려다가 안되서 안넣음(?) \n 2021-02-12 : j!마크시참 기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-12 : 음악기능 추가(자세한 내용은 'j!도움말' 이용) \n 2021-02-14 : 트위치 , 디스코드 안내 기능 삭제 \n 2021-02-14 : 마크시참 안내기능 삭제 \n 2021-02-15 : 24시간 기능 추가 \n 2021-02-15 : 24시간 기능 추가되면서 음악기능 사용 불가(왜인지는 모르겠지만 안됨) \n 2021-02-17 : DM도 가능하게 변경", color=0xD5D5D5)
         await message.channel.send(embed=embed)
 
     if message.content.startswith("j!재생"):
