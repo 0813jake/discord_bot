@@ -24,6 +24,8 @@ async def on_ready():
     print('성공적으로 봇이 시작되었습니다.')
     game = discord.Game('j!도움말')
 
+
+    
 @client.event
 async def bt(games):
     await client.wait_until_ready()
@@ -36,8 +38,7 @@ async def bt(games):
             time.sleep(3)
             await client.change_presence(status = discord.Status.online, activity = discord.Game('이 메세지는 3초마다 바뀝니다.'))
             time.sleep(3)
-    
-@client.event
+
 async def on_member_join(self, member):
     msg = "<@{}>님 '제이크 디스코드 서버'에 오신걸 환영합니다!".format(str(member.id))
     await find_first_channel(member.guild.text_channels).send(msg)
