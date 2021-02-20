@@ -19,7 +19,6 @@ tm = time.localtime(1575142526.500323)
 
 @client.event
 async def on_ready():
-
     print(client.user.name)
     print('성공적으로 봇이 시작되었습니다.')
     game = discord.Game('j!도움말')
@@ -29,7 +28,7 @@ async def on_ready():
     
 @client.event
 async def on_member_join(self, member):
-    msg = "<@{}>님 '제이크 디스코드 서버'에 오신걸 환영합니다!".format(str(member.id))
+    msg = "<@{}>님 제이크 디스코드 서버에 오신걸 환영합니다!".format(str(member.id))
     await find_first_channel(member.guild.text_channels).send(msg)
     return None
 
